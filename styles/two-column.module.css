@@ -12,4 +12,15 @@ width: 768px;
 .sidebar {
 width: 240px;
 }
+
+.sidebar * {
+text-align: right;
+}
+
+.sidebar :is(div, ul) {
+width: fit-content;
+margin-left: auto;
+place-items: flex-end;
+place-content: flex-end;
+}
 }
