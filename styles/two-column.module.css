@@ -11,6 +11,9 @@ width: 768px;
 
 .sidebar {
 width: 240px;
+position: sticky;
+top: 40px;
+align-self: flex-start;
 }
 
 .sidebar * {
