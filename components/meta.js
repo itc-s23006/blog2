@@ -12,12 +12,13 @@ const {
 } = siteMeta
 
 const Meta = ({ pageTitle }) => {
+  /* ページのタイトル */
+  const title = pageTitle ? `${pageTitle} | ${siteTItle}` : siteTitle
+
   return (
     <Head>
-      <title>
-        {pageTitle} | {siteTitle}
-      </title>
-      <meta property='og:title' content={`${pageTitle} | ${siteTitle}`} />
+      <title>{title}</title>
+      <meta property='og:title' content={title} />
     </Head>
   )
 }
