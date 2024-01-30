@@ -13,7 +13,7 @@ const {
 
 const Meta = ({ pageTitle }) => {
   /* ページのタイトル */
-  const title = pageTitle ? `${pageTitle} | ${siteTItle}` : siteTitle
+  const title = pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle
 
   return (
     <Head>
