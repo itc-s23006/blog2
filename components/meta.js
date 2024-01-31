@@ -1,32 +1,22 @@
 import Head from 'next/head'
-import { useRouter } from 'next/router'
-
-/* サイトに関する情報 */
 import { siteMeta } from 'lib/constants'
+import { useRouter } from 'next/router'
+import siteImg from 'images/ogp.jpg'
+
 const {
   siteTitle,
   siteDesc,
   siteUrl,
-  siteLocale,
   siteType,
+  siteLocale,
   siteIcon
 } = siteMeta
 
-/* 汎用OGP画像 */
-import siteImg from 'images/ogp.jpg'
-
 const Meta = ({ pageTitle, pageDesc, pageImg, pageImgW, pageImgH }) => {
-  /* ページのタイトル */
   const title = pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle
-
-  /* ページの説明 */
   const desc = pageDesc ?? siteDesc
-
-  /* ページのURL */
   const router = useRouter()
   const url = `${siteUrl}${router.asPath}`
-
-  /* OGP画像 */
   const img = pageImg || siteImg.src
   const imgW = pageImgW || siteImg.width
   const imgH = pageImgH || siteImg.height
