@@ -1,5 +1,3 @@
-/* インポートしたclientは削除。*/
-
 import { getPostBySlug } from 'lib/api'
 import Container from 'components/container'
 
