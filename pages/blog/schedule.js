@@ -1,3 +1,5 @@
+import { client } from 'lib/api'
+
 const Schedule = () => {
   return <h1>記事のタイトル</h1>
 }
