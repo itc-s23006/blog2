@@ -8,7 +8,13 @@ const getStaticProps = async () => {
   const resPromise = client.get({
     endpoint: 'blogs'
   })
-  resPromise.then(res => console.log(res)).catch(err => console.log(err))
+
+  try {
+    const res = await resPromise
+    console.log(res)
+  } catch (err) {
+    console.log(err)
+  }
 
   return {
     props: {}
