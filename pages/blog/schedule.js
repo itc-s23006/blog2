@@ -62,7 +62,7 @@ const Schedule = ({
 }
 
 const getStaticProps = async () => {
-  const slug = 'micro'
+  const slug = 'schedule'
 
   const post = await getPostBySlug(slug)
 
