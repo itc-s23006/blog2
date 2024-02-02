@@ -10,6 +10,8 @@ import {
 import PostBody from 'components/post-body'
 import ConvertBody from 'components/convert-body'
 import PostCategories from 'components/post-categories'
+import { extractText } from 'lib/extract-text'
+import Meta from 'components/meta'
 
 const Schedule = ({ title, publish, content, eyecatch, categories }) => {
   return (
@@ -49,6 +51,8 @@ const getStaticProps = async () => {
 
   const post = await getPostBySlug(slug)
 
+  const description = extractText(post.content)
+
   return {
     props: {
       title: post.title,
@@ -56,6 +60,7 @@ const getStaticProps = async () => {
       content: post.content,
       eyecatch: post.eyecatch,
       categories: post.categories
+      description
     }
   }
 }
