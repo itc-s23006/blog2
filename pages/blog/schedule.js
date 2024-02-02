@@ -1,7 +1,7 @@
 import { getPostBySlug } from 'lib/api'
 import Container from 'components/container'
 import PostHeader from 'components/post-header'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import {
   TwoColumn,
   TwoColumnMain,
