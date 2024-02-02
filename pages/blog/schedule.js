@@ -2,7 +2,11 @@ import { getPostBySlug } from 'lib/api'
 import Container from 'components/container'
 import PostHeader from 'components/post-header'
 import Image from 'next/image'
-import { TwoColumn, TwoColumn, TwoColumnSidebar } from 'components/two-column'
+import {
+  TwoColumn,
+  TwoColumnMain,
+  TwoColumnSidebar
+} from 'components/two-column'
 import PostBody from 'components/post-body'
 
 const Schedule = ({ title, publish, content, eyecatch, categories }) => {
@@ -25,7 +29,7 @@ const Schedule = ({ title, publish, content, eyecatch, categories }) => {
 
         <TwoColumn>
           <TwoColumnMain>
-            <PostBody>{contact}</PostBody>
+            <PostBody>{content}</PostBody>
           </TwoColumnMain>
           <TwoColumnSidebar></TwoColumnSidebar>
         </TwoColumn>
