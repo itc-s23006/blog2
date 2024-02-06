@@ -13,6 +13,7 @@ import PostCategories from 'components/post-categories'
 import { extractText } from 'lib/extract-text'
 import Meta from 'components/meta'
 import { eyecatchLocal } from 'lib/constants'
+import { getPlaiceholder } from 'plaiceholder'
 
 const Schedule = ({
   title,
@@ -44,6 +45,8 @@ const Schedule = ({
             height={eyecatch.height}
             sizes='(min-width: 1152px) 1152px, 100vw'
             priority
+            plaiceholder='blur'
+            blurDataURL={eyecatch.blurDataURL}
           />
         </figure>
 
@@ -70,6 +73,9 @@ const getStaticProps = async () => {
   const description = extractText(post.content)
 
   const eyecatch = post.eyecatch ?? eyecatchLocal
+
+  const { base64 } = await getPlaiceholder(eyecatch.url)
+  eyecatch.blurDataURL = base64
 
   return {
     props: {
