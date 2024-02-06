@@ -72,8 +72,8 @@ const getStaticPaths = async () => {
   }
 }
 
-const getStaticProps = async () => {
-  const slug = 'micro'
+const getStaticProps = async context => {
+  const slug = context.params.slug
 
   const post = await getPostBySlug(slug)
 
