@@ -14,6 +14,7 @@ import { extractText } from 'lib/extract-text'
 import Meta from 'components/meta'
 import { eyecatchLocal } from 'lib/constants'
 import { getPlaiceholder } from 'plaiceholder'
+import { getImageBuffer } from 'lib/getImageBuffer'
 
 const Post = ({
   title,
@@ -81,7 +82,8 @@ const getStaticProps = async context => {
 
   const eyecatch = post.eyecatch ?? eyecatchLocal
 
-  const { base64 } = await getPlaiceholder(eyecatch.url)
+  const imageBuffer = await getImageBuffer(eyecatch.url)
+  const { base64 } = await getPlaiceholder(imageBuffer)
   eyecatch.blurDataURL = base64
 
   return {
