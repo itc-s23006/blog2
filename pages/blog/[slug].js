@@ -15,6 +15,7 @@ import Meta from 'components/meta'
 import { eyecatchLocal } from 'lib/constants'
 import { getPlaiceholder } from 'plaiceholder'
 import { getImageBuffer } from 'lib/getImageBuffer'
+import { prevNextPost } from 'lib/prev-next-post'
 
 const Post = ({
   title,
@@ -88,6 +89,9 @@ const getStaticProps = async context => {
   const { base64 } = await getPlaiceholder(imageBuffer)
   eyecatch.blurDataURL = base64
 
+  const allSlugs = await getAllSlugs()
+  const [prevPost, nextPost] = prevNextPost(allSlugs, slug)
+
   return {
     props: {
       title: post.title,
@@ -95,7 +99,9 @@ const getStaticProps = async context => {
       content: post.content,
       eyecatch,
       categories: post.categories,
-      description
+      description,
+      prevPost,
+      nextPost
     }
   }
 }
