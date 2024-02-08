@@ -1,6 +1,6 @@
 import styles from 'styles/pagination.module.css'
 import Link from 'next/link'
-import { FontAwesomeicon } from '@fortawesome/react-awesome'
+import { FontAwesomeIcon } from '@fortawesome/react-awesome'
 import {
   faChevronLeft,
   faChevronRight
