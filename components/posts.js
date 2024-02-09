@@ -7,7 +7,7 @@ const Posts = ({ posts }) => {
     <div className={styles.gridContainer}>
       {posts.map(({ title, slug, eyecatch }) => (
         <article className={styles.eachPost} key={slug}>
-          <Link href={`/blog/${slug}`}>
+          <Link legacyBehavior href={`/blog/${slug}`}>
             <a>
               <figure>
                 <Image
