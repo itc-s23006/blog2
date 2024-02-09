@@ -6,14 +6,14 @@ const Posts = ({ posts }) => {
   return (
     <div className={styles.gridContainer}>
       {posts.map(({ title, slug, eyecatch }) => (
-        <article className={styles.eachPost} key={slug}>
+        <article className={styles.post} key={slug}>
           <Link legacyBehavior href={`/blog/${slug}`}>
             <a>
               <figure>
                 <Image
                   src={eyecatch.url}
                   alt=''
-                  layout='responsive'
+                  layout='fill'
                   objectFit='cover'
                   sizes='(min-width: 1152px) 576px, 50vw'
                   placeholder='blur'
