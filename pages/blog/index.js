@@ -5,6 +5,7 @@ import { getAllPosts } from 'lib/api'
 import Posts from 'components/posts'
 import { getPlaiceholder } from 'plaiceholder'
 import { eyecatchLocal } from 'lib/constants'
+import { getImageBuffer } from 'lib/getImageBuffer'
 
 const Blog = ({ posts }) => {
   return (
