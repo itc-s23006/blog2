@@ -1,5 +1,6 @@
 import styles from 'styles/posts.module.css'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const Posts = ({ posts }) => {
   return (
@@ -8,6 +9,17 @@ const Posts = ({ posts }) => {
         <article className={styles.post} key={slug}>
           <Link href={`/blog/${slug}`}>
             <a>
+              <figure>
+                <Image
+                  src={eyecatch.url}
+                  alt=''
+                  layout='responsive'
+                  width={eyecatch.width}
+                  height={eyecatch.height}
+                  placeholder='blur'
+                  blurDataURL={eyecatch.blurDataURL}
+                />
+              </figure>
               <h2>{title}</h2>
             </a>
           </Link>
