@@ -24,7 +24,8 @@ const getStaticProps = async () => {
     if (!post.hasOwnProperty.call('eyecatch')) {
       post.eyecatch = eyecatchLocal
     }
-    const { base64 } = await getPlaiceholder(post.eyecatch.url)
+    const imageBuffer = await getImageBuffer(post.eyecatch.url)
+    const { base64 } = await getPlaiceholder(imageBuffer)
     post.eyecatch.blurDataURL = base64
   }
 
