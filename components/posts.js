@@ -5,8 +5,8 @@ import Image from 'next/image'
 const Posts = ({ posts }) => {
   return (
     <div className={styles.gridContainer}>
-      {posts.map(({ title, slug }) => (
-        <article className={styles.post} key={slug}>
+      {posts.map(({ title, slug, eyecatch }) => (
+        <article className={styles.eachPost} key={slug}>
           <Link href={`/blog/${slug}`}>
             <a>
               <figure>
