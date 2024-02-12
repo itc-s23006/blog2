@@ -7,7 +7,7 @@ import {
   TwoColumnMain,
   TwoColumnSidebar
 } from 'components/two-column'
-import Image from "next/legacy/image"
+import Image from "next/image"
 import eyecatch from 'images/about.jpg'
 import Meta from 'components/meta'
 
@@ -28,11 +28,13 @@ const About = () => {
         <Image
           src={eyecatch}
           alt=''
-          layout='responsive'
-          sizes='(min-width: 1152px) 1152px, 100vw'
           priority
           placeholder='blur'
-        />
+          sizes='(min-width: 1152px) 1152px, 100vw'
+          style={{
+            width: "100%",
+            height: "auto"
+          }} />
       </figure>
 
       <TwoColumn>
@@ -71,7 +73,7 @@ const About = () => {
         </TwoColumnSidebar>
       </TwoColumn>
     </Container>
-  )
+  );
 }
 
 export default About
