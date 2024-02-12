@@ -1,7 +1,7 @@
 import { getPostBySlug, getAllSlugs } from 'lib/api'
 import Container from 'components/container'
 import PostHeader from 'components/post-header'
-import Image from "next/image"
+import Image from 'next/image'
 import {
   TwoColumn,
   TwoColumnMain,
@@ -43,6 +43,7 @@ const Post = ({
 
         <figure>
           <Image
+            key={eyecatch.url}
             src={eyecatch.url}
             alt=''
             width={eyecatch.width}
@@ -51,10 +52,7 @@ const Post = ({
             plaiceholder='blur'
             blurDataURL={eyecatch.blurDataURL}
             sizes='(min-width: 1152px) 1152px, 100vw'
-            style={{
-              width: "100%",
-              height: "auto"
-            }} />
+          />
         </figure>
 
         <TwoColumn>
@@ -76,7 +74,7 @@ const Post = ({
         />
       </article>
     </Container>
-  );
+  )
 }
 
 const getStaticPaths = async () => {
