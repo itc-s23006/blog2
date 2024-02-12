@@ -1,6 +1,6 @@
 import styles from 'styles/posts.module.css'
 import Link from 'next/link'
-import Image from "next/legacy/image"
+import Image from "next/image"
 
 const Posts = ({ posts }) => {
   return (
@@ -13,12 +13,13 @@ const Posts = ({ posts }) => {
                 <Image
                   src={eyecatch.url}
                   alt=''
-                  layout='fill'
-                  objectFit='cover'
-                  sizes='(min-width: 1152px) 576px, 50vw'
                   placeholder='blur'
                   blurDataURL={eyecatch.blurDataURL}
-                />
+                  fill
+                  sizes='(min-width: 1152px) 576px, 50vw'
+                  style={{
+                    objectFit: "cover"
+                  }} />
               </figure>
               <h2>{title}</h2>
             </a>
@@ -26,7 +27,7 @@ const Posts = ({ posts }) => {
         </article>
       ))}
     </div>
-  )
+  );
 }
 
 export default Posts
