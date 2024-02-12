@@ -5,11 +5,12 @@ import Posts from 'components/posts'
 import { getPlaiceholder } from 'plaiceholder'
 import { eyecatchLocal } from 'lib/constants'
 import { getImageBuffer } from 'lib/getImageBuffer'
+import Meta from 'components/meta'
 
 const Category = ({ name, posts }) => {
   return (
     <Container>
-      <PostHeader title={name} subtitle='Blog Category' />
+      <Meta pageTitle={name} pageDesc={`${name}に関する記事`} />
       <Posts posts={posts} />
     </Container>
   )
