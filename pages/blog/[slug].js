@@ -46,10 +46,11 @@ const Post = ({
             key={eyecatch.url}
             src={eyecatch.url}
             alt=''
+            layout='responsive'
             width={eyecatch.width}
             height={eyecatch.height}
             priority
-            plaiceholder='blur'
+            placeholder='blur'
             blurDataURL={eyecatch.blurDataURL}
             sizes='(min-width: 1152px) 1152px, 100vw'
           />
