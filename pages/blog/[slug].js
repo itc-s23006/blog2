@@ -49,10 +49,10 @@ const Post = ({
             layout='responsive'
             width={eyecatch.width}
             height={eyecatch.height}
+            sizes='(min-width: 1152px) 1152px, 100vw'
             priority
             placeholder='blur'
             blurDataURL={eyecatch.blurDataURL}
-            sizes='(min-width: 1152px) 1152px, 100vw'
           />
         </figure>
 
