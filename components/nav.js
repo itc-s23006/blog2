@@ -1,9 +1,12 @@
 import Link from 'next/link'
 import styles from 'styles/nav.module.css'
+import { useState } from 'react'
 
 const Nav = () => {
+  const [navIsOpen, setNavIsOpen] = useState(false)
+
   return (
-    <nav>
+    <nav className={navIsOpen ? styles.open : styles.close}>
       <button className={styles.btn}>MENU</button>
 
       <ul className={styles.list}>
