@@ -12,6 +12,8 @@ const Blog = ({ posts }) => {
     <Container>
       <Meta pageTitle='ブログ' pageDesc='ブログの記事一覧' />
 
+      <Hero title='Blog' subtitle='Recent Posts' />
+
       <Posts posts={posts} />
     </Container>
   )
@@ -21,7 +23,7 @@ const getStaticProps = async () => {
   const posts = await getAllPosts()
 
   for (const post of posts) {
-    if (!post.hasOwnProperty.call('eyecatch')) {
+    if (!post.hasOwnProperty('eyecatch')) {
       post.eyecatch = eyecatchLocal
     }
     const imageBuffer = await getImageBuffer(post.eyecatch.url)
