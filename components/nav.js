@@ -5,9 +5,15 @@ import { useState } from 'react'
 const Nav = () => {
   const [navIsOpen, setNavIsOpen] = useState(false)
 
+  const toggleNav = () => {
+    setNavIsOpen(prev => !prev)
+  }
+
   return (
     <nav className={navIsOpen ? styles.open : styles.close}>
-      <button className={styles.btn}>MENU</button>
+      <button className={styles.btn} onClick={toggleNav}>
+        MENU
+      </button>
 
       <ul className={styles.list}>
         <li>
