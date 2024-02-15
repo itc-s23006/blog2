@@ -11,6 +11,7 @@ const Category = ({ name, posts }) => {
   return (
     <Container>
       <Meta pageTitle={name} pageDesc={`${name}に関する記事`} />
+      <PostHeader title={name} subtitle='Blog Category' />
       <Posts posts={posts} />
     </Container>
   )
@@ -33,7 +34,7 @@ const getStaticProps = async context => {
   const posts = await getAllPostsByCategory(cat.id)
 
   for (const post of posts) {
-    if (!post.hasOwnProperty('eyecatch')) {
+    if (!post.hasOwnProperty.call('eyecatch')) {
       post.eyecatch = eyecatchLocal
     }
     const imageBuffer = await getImageBuffer(post.eyecatch.url)
