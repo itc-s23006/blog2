@@ -13,16 +13,22 @@ gap: 2em;
 @media (max-width: 767px) {
 /* ボタン */
 .btn {
+  all: unset;
+  outline: revert;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  width: 42px;
+  height: 42px;
 position: relative;
 z-index: 200;
 }
 
 .close .btn {
-color: blue;
+color: var(--gray-73);
 }
 
 .open .btn {
-color: red;
+color: var(--white);
 }
 
 .list {
