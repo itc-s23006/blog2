@@ -21,17 +21,17 @@ const Nav = () => {
 
       <ul className={styles.list}>
         <li>
-          <Link href='/'>
+          <Link legacyBehavior href='/'>
             <a onClick={closeNav}>Home</a>
           </Link>
         </li>
         <li>
-          <Link href='/about'>
+          <Link legacyBehavior href='/about'>
             <a onClick={closeNav}>About</a>
           </Link>
         </li>
         <li>
-          <Link href='/blog'>
+          <Link legacyBehavior href='/blog'>
             <a onClick={closeNav}>Blog</a>
           </Link>
         </li>
