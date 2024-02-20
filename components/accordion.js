@@ -1,12 +1,19 @@
+import { useState } from 'react'
 import styles from 'styles/accordion.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 const Accordion = ({ heading, children }) => {
+  const [textIsOpen, setTextIsOpen] = useState(false)
+
+  const toggleText = () => {
+    setTextIsOpen(prev => !prev)
+  }
+
   return (
-    <div className={styles.open}>
+    <div className={textIsOpen ? styles.open : styles.close}>
       <h3 className={styles.heading}>
-        <button>
+        <button onClick={toggleText}>
           {heading}
           <FontAwesomeIcon icon={faCircleChevronDown} className={styles.icon} />
         </button>
