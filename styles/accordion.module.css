@@ -40,7 +40,7 @@ transition: height 0.5s;
 }
 
 .open .text {
-height: auto;
+height: var(--text-height);
 }
 
 .textInner {
